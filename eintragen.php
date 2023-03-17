@@ -1,10 +1,9 @@
 <?php
 // Formulardaten empfangen und validieren
-if (isset($_POST["name"]) && isset($_POST["datum"]) && isset($_POST["anzahl"]) && isset($_FILES["bild"])) {
+if (isset($_POST["name"]) && isset($_POST["datum"])  && isset($_FILES["bild"])) {
   // Name, Datum und Anzahl auslesen
   $name = $_POST["name"];
   $datum = $_POST["datum"];
-  $anzahl = $_POST["anzahl"];
 
   // Bild auslesen und überprüfen
   $bild = $_FILES["bild"];
@@ -48,11 +47,11 @@ die("Verbindung fehlgeschlagen: " . $conn->connect_error);
 }
 
 // SQL-Abfrage schreiben um einen neuen Eintrag in die Tabelle speisen einzufügen
-$sql = "INSERT INTO speisen (name, bild, datum, anzahl) VALUES (?, ?, ?, ?)";
+$sql = "INSERT INTO speisen (name, bild, datum) VALUES (?, ?, ?)";
 
 // Abfrage vorbereiten und ausführen
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssi", $name, $ziel, $datum, $anzahl); // s steht für string (Zeichenkette), i steht für integer (ganze Zahl)
+$stmt->bind_param("sss", $name, $ziel, $datum); // s steht für string (Zeichenkette)
 $stmt->execute();
 
 // Überprüfen ob Einfügen erfolgreich war

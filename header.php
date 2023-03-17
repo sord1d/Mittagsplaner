@@ -14,7 +14,7 @@ require_once('config.php');
   <div class="container-fluid">
     <!-- Logo und Titel -->
     <a class="navbar-brand" href="#">
-      <img src="logo.png" alt="" width="30" height="24" class="d-inline-block align-top">
+      <!--img src="logo.png" alt="" width="30" height="24" class="d-inline-block align-top"-->
       <?php echo $siteName; ?>
     </a>
     <!-- Toggle Button für kleine Bildschirme -->

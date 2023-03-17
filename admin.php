@@ -32,11 +32,6 @@
     <label for="datum"><?php echo $mealDate;?>:</label>
     <input type="date" name="datum" id="datum" class="form-control bg-dark text-white" required>
   </div>
-  <!-- Anzahl -->
-  <div class="form-group">
-    <label for="anzahl"><?php echo $mealQuantity;?></label>
-    <input type="number" name="anzahl" id="anzahl" min="0" max="0" default ="0" class="form-control bg-dark text-white" required>
-  </div>
   <!-- Bild -->
   <div class="form-group">
     <label for="bild"><?php echo $mealPicture;?></label>
