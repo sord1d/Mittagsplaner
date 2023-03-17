@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 $conn = new mysqli($hostName, $userName, $password, $databaseName);
+echo '<link rel="stylesheet" href="css/bootstrap.min.css">';
 // Verbindung überprüfen
 if ($conn->connect_error) {
   die("Verbindung fehlgeschlagen: " . $conn->connect_error);
@@ -14,7 +15,7 @@ $result = $conn->query($sql);
 // Überprüfen ob Ergebnis gültig ist
 if ($result && $result->num_rows > 0) {
   // HTML-Tabelle erstellen
-  echo "<table>";
+  echo "<table  class='table table-striped table-bordered table-dark'>";
   echo "<tr>";
   echo "<th>ID</th>";
   echo "<th>Name</th>";
