@@ -58,6 +58,9 @@ $stmt->execute();
 if ($stmt->affected_rows > 0) {
   // Erfolgsmeldung anzeigen
   echo "Speise erfolgreich eingestellt.<br>";
+  session_start();
+      $_SESSION["mealadded"] = "true";
+      header('Location: admin.php');
 } else {
   // Fehlermeldung anzeigen
   echo "Fehler beim Einstellen der Speise.<br>";

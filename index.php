@@ -15,7 +15,7 @@ $result = $conn->query($sql);
 // Überprüfen ob Ergebnis gültig ist
 if ($result && $result->num_rows > 0) {
   // HTML-Tabelle erstellen
-  echo "<table  class='table table-striped table-bordered table-dark'>";
+  echo "<table class='table table-striped table-bordered table-dark'>";
   echo "<tr>";
 #  echo "<th>ID</th>";
   echo "<th>Name</th>";
@@ -37,7 +37,7 @@ if ($result && $result->num_rows > 0) {
 #    echo "<td>" . $row["datum"] . "</td>";
     echo "<td>" . $row["anzahl"] . "</td>";
     echo "<td> <img src ='" . $row["bild"] . "' width ='400' height = '200'></td>";
-    echo "<td><button type='submit' name='id' value='". $row["id"] ."'>Abstimmen</button></td>";
+    echo "<td><button type='submit' class='btn btn-primary' name='id' value='". $row["id"] ."'>Abstimmen</button></td>";
     echo "</tr>";
   }
 

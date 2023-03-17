@@ -1,15 +1,21 @@
+<?php
+require_once('config.php');
+?>
+
+<title><?php echo $siteName; ?></title>
 <!-- Bootstrap CDN einbinden -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
 <script src="css/jquery-3.5.1.slim.min.js"></script>
 <script src="css/bootstrap.min.js"></script>
 
 <!-- Navbar mit Bootstrap Klassen -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-header" data-bs-theme="dark">
   <div class="container-fluid">
     <!-- Logo und Titel -->
     <a class="navbar-brand" href="#">
       <img src="logo.png" alt="" width="30" height="24" class="d-inline-block align-top">
-      10.2 Mittagsplaner
+      <?php echo $siteName; ?>
     </a>
     <!-- Toggle Button für kleine Bildschirme -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +35,7 @@
           <a class ="nav-link "href ="admin.php">Einstellen</a >
         </li >
       </ul >
-      
+
       <div class ="form-check form-switch ">
         <input type="checkbox" class="form-check-input" id="colorModeSwitch" data-toggle="toggle" data-onstyle="light" data-offstyle="dark" data-on-text="Light Mode" data-off-text="Dark Mode" onchange="toggleColorMode()">       </div >
      </div >

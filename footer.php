@@ -1,7 +1,7 @@
 
 
 <!-- Container mit Bootstrap Klassen -->
-<footer class="bg-dark text-center text-white">
+<footer class="bg-footer text-center text-white">
 
 <div class="container" data-bs-theme="dark">
 
@@ -15,5 +15,5 @@
     <a href="https://jquery.com/" class="bi bi-jquery mx-2 text-white" aria-label="jQuery">jQuery</a>
 
   </div>
-  <p class="text-center text-white">© 2023 10.2 Mittagsplaner</p>
+  <p class="text-center text-white">© 2023 <?php echo $siteName; ?></p>
 </div>
