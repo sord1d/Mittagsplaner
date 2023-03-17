@@ -1,6 +1,16 @@
 <?php
 require_once('config.php');
 require_once('header.php');
+
+  session_start();
+if (isset($_SESSION["mealselected"])) {
+
+  echo "<div class = 'successMSG'>";
+  echo $choiceSuccess;
+  echo '<?php unset($_SESSION["mealselected"])?>';
+  echo '</div>';
+   }
+
 $conn = new mysqli($hostName, $userName, $password, $databaseName);
 // Verbindung überprüfen
 if ($conn->connect_error) {
@@ -18,11 +28,11 @@ if ($result && $result->num_rows > 0) {
   echo "<table class='table table-striped table-bordered table-dark'>";
   echo "<tr>";
 #  echo "<th>ID</th>";
-  echo "<th>Name</th>";
+  echo "<th>". $mealName ."</th>";
 #  echo "<th>Datum</th>";
-  echo "<th>Anzahl</th>";
-  echo "<th>Bild</th>";
-  echo "<th>Abstimmen</th>";
+  echo "<th>". $mealQuantity ."</th>";
+  echo "<th>". $mealPicture ."</th>";
+  echo "<th>". $mealChoose ."</th>";
 
   echo "</tr>";
 
@@ -37,7 +47,7 @@ if ($result && $result->num_rows > 0) {
 #    echo "<td>" . $row["datum"] . "</td>";
     echo "<td>" . $row["anzahl"] . "</td>";
     echo "<td> <img src ='" . $row["bild"] . "' width ='400' height = '200'></td>";
-    echo "<td><button type='submit' class='btn btn-primary' name='id' value='". $row["id"] ."'>Abstimmen</button></td>";
+    echo "<td><button type='submit' class='btn btn-primary' name='id' value='". $row["id"] ."'>". $mealChoose ."</button></td>";
     echo "</tr>";
   }
 
@@ -46,7 +56,7 @@ if ($result && $result->num_rows > 0) {
 
 } else {
   // Keine Daten gefunden
-  echo "Keine Speisen für heute gefunden.";
+  echo $noMealToday;
 }
 
 // Verbindung schließen

@@ -25,20 +25,17 @@ require_once('config.php');
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Links zur Navigation -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home</a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php">Speisen</a>
+          <a class="nav-link" href="index.php"><?php echo $headerMeals;?></a>
         </li>
         <li class ="nav-item ">
-          <a class ="nav-link "href ="admin.php">Einstellen</a >
+          <a class ="nav-link "href ="admin.php"><?php echo $headerAdmin;?></a>
         </li >
       </ul >
 
-      <div class ="form-check form-switch ">
+      <!--div class ="form-check form-switch ">
         <input type="checkbox" class="form-check-input" id="colorModeSwitch" data-toggle="toggle" data-onstyle="light" data-offstyle="dark" data-on-text="Light Mode" data-off-text="Dark Mode" onchange="toggleColorMode()">       </div >
-     </div >
+     </div -->
    </div >
 </nav >
 

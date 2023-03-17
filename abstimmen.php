@@ -20,7 +20,9 @@ $stmt->execute();
 // Überprüfen ob Update erfolgreich war
 if ($stmt->affected_rows > 0) {
   // Erfolgsmeldung anzeigen
-  echo "Vielen Dank für Ihre Stimme!";
+  session_start();
+      $_SESSION["mealselected"] = "true";
+      header('Location: index.php');
 } else {
   // Fehlermeldung anzeigen
   echo "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal.";
