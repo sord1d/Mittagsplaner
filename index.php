@@ -7,8 +7,9 @@ if (isset($_SESSION["mealselected"])) {
 
   echo "<div class = 'successMSG'>";
   echo $choiceSuccess;
-  echo '<?php unset($_SESSION["mealselected"])?>';
   echo '</div>';
+  unset($_SESSION["mealselected"]);
+  header("Refresh:5; url=index.php");
    }
 
 $conn = new mysqli($hostName, $userName, $password, $databaseName);
@@ -25,7 +26,7 @@ $result = $conn->query($sql);
 // Überprüfen ob Ergebnis gültig ist
 if ($result && $result->num_rows > 0) {
   // HTML-Tabelle erstellen
-  echo "<table class='table table-striped table-bordered table-dark'>";
+  echo "<table class='table table-striped table-bordered table-dark topmargin'>";
   echo "<tr>";
 #  echo "<th>ID</th>";
   echo "<th>". $mealName ."</th>";

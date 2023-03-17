@@ -3,13 +3,22 @@
 
 <?php
   session_start();
-if (isset($_SESSION["mealadded"])) {
-  ?>
-  <div class = "successMSG">
-    Die Speise wurde erfolgreich hinzugefügt.
-  <?php unset($_SESSION["mealadded"])?>
-  </div>
-  <?php }?>
+  if (isset($_SESSION["imgExists"])) {
+    ?>
+    <div class = "errorMSG">
+      <?php
+      echo $errImgExists;
+      unset($_SESSION["imgExists"])?>
+    </div>
+    <?php }
+    if (isset($_SESSION["mealadded"])) {
+      ?>
+      <div class = "successMSG">
+      <?php
+      echo $successAdded;
+      unset($_SESSION["mealadded"])?>
+      </div>
+      <?php }?>
 
 
 <form action="eintragen.php" method="post" enctype="multipart/form-data" class="container bg-dark text-center text-white addmeal">

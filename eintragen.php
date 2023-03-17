@@ -26,8 +26,9 @@ if (isset($_POST["name"]) && isset($_POST["datum"]) && isset($_POST["anzahl"]) &
           die("Fehler beim Verschieben des Bildes.<br>");
         }
       } else {
-        // Fehlermeldung anzeigen und abbrechen
-        die("Dateiname schon vorhanden.<br>");
+        // Fehlermeldung anzeigen
+          session_start();
+            $_SESSION["imgExists"] = "true";
       }
     } else {
       // Fehlermeldung anzeigen und abbrechen
