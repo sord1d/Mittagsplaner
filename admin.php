@@ -1,7 +1,7 @@
 <!-- HTML Formular mit Bootstrap Klassen -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<?php require_once('header.php'); ?>
 
-<form action="eintragen.php" method="post" enctype="multipart/form-data" class="container">
+<form action="eintragen.php" method="post" enctype="multipart/form-data" class="container bg-dark text-center text-white">
   <!-- Name der Speise -->
   <div class="form-group">
     <label for="name">Name der Speise:</label>
@@ -25,3 +25,4 @@
    <!-- Submit Button -->
    <button type ="submit "value ="Speise einstellen "class ="btn btn-primary ">Speise einstellen</button >
 </form >
+<?php require_once('footer.php'); ?>
